@@ -1,17 +1,21 @@
 //
-//  Little_LemonApp.swift
+//  Little LemonApp.swift
 //  Little Lemon
 //
-//  Created by Muna Abdelwahab on 20/05/2025.
+//  Created by Muna Abdelwahab on 20 May 2025.
 //
 
 import SwiftUI
 
 @main
 struct Little_LemonApp: App {
+    let persistenceController = PersistenceController.shared
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Onboarding()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
+
